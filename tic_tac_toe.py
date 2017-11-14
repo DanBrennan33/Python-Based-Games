@@ -68,9 +68,12 @@ def full_board_check(board):
 
 def player_choice(board):
 	while True:
-		position = int(input('Enter position (1-9): '))
-		if 0 < position < 10 and space_check(board, position):
-			break
+		try:
+			position = int(input('Enter position (1-9): '))
+			if 0 < position < 10 and space_check(board, position):
+				break
+		except:
+			continue
 	return position
 
 def replay():
@@ -78,6 +81,7 @@ def replay():
 	while not (replay == 'Y' or replay == 'N'):
 		replay = input('Do you want to play again (Y/N): ').upper()
 	return replay.startswith('Y')
+
 
 print('Welcome to Tic Tac Toe!')
 while True:
