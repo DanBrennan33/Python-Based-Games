@@ -1,6 +1,5 @@
 from random import randint
 
-
 options = ["Rock", "Paper", "Scissors"]
 score = [0,0]
 
@@ -22,31 +21,31 @@ while(True):
     print("Your choice:", choice)
     
     if opponent_choice == "Rock":
-        if choice == "Rock":
-            print("Tie")
+        if choice == "Scissors":
+            print("Lose")
+            score[1] += 1
         elif choice == "Paper":
             print("Win")
             score[0] += 1
         else:
+            print("Tie")
+    elif opponent_choice == "Paper":
+        if choice == "Rock":
             print("Lose")
             score[1] += 1
-    elif opponent_choice == "Paper":
-        if choice == "Paper":
-            print("Tie")
         elif choice == "Scissors":
             print("Win")
             score[0] += 1
         else:
+            print("Tie")
+    else:
+        if choice == "Paper":
             print("Lose")
             score[1] += 1
-    else:
-        if choice == "Scissors":
-            print("Tie")
         elif choice == "Rock":
             print("Win")
             score[0] += 1
         else:
-            print("Lose")
-            score[1] += 1
+            print("Tie")
         
         
